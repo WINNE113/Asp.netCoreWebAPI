@@ -1,0 +1,27 @@
+﻿@model BusinessObject.Product
+
+<H1>Product</H1>
+<form asp-controller="Product" asp-action="Create" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">CategoryId</label>
+    <input class="form-control" value="" asp-for="CategoryId" aria-describedby="emailHelp">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Product Name</label>
+    <input class="form-control" value="" asp-for="ProductName" aria-describedby="emailHelp">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Weight</label>
+    <input class="form-control" value="" asp-for="Weight" aria-describedby="emailHelp">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">UnitPrice</label>
+    <input class="form-control" value="" asp-for="UnitPrice" aria-describedby="emailHelp">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">UnitStock</label>
+    <input class="form-control" value="" asp-for="UnitStock" aria-describedby="emailHelp">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

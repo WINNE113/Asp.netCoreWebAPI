@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<BusinessObject.Product>
+
+<H1>Product</H1>
+<style>
+    .form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+</style>
+<div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <form class="card card-sm" asp-controller="Product" asp-action="Search" method="post">
+                                <div class="card-body row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <i class="fas fa-search h4 text-body"></i>
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input name="txtName" class="form-control form-control-lg form-control-borderless" type="search" value="" placeholder="Search topics or keywords">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col-auto">
+                                        <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                    </div>
+                                    <!--end of col-->
+                                </div>
+                            </form>
+                        </div>
+                        <!--end of col-->
+                    </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.UnitStock)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryId)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.UnitStock)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
